@@ -91,6 +91,8 @@ async function main() {
         .send({ from: OWNER_ADDRESS });
       console.log("Minted lootbox. Transaction: " + result.transactionHash);
     }
+
+    console.log("Minting with factory is finished. 👏👏👏");
   } else if (NFT_CONTRACT_ADDRESS) {
     const nftContract = new web3Instance.eth.Contract(
       NFT_ABI,
@@ -105,6 +107,8 @@ async function main() {
         .send({ from: OWNER_ADDRESS });
       console.log("Minted creature. Transaction: " + result.transactionHash);
     }
+
+    console.log("Minting is finished. 👏👏👏");
   } else {
     console.error(
       "Add NFT_CONTRACT_ADDRESS or FACTORY_CONTRACT_ADDRESS to the environment variables"

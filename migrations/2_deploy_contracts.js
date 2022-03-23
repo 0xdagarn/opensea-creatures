@@ -79,4 +79,6 @@ module.exports = async (deployer, network, addresses) => {
     await setupCreatureAccessories.setupAccessoryLootBox(lootBox, factory);
     await lootBox.transferOwnership(factory.address);
   }
+
+  console.log("Deploying is finished. 👏👏👏");
 };
