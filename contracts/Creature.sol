@@ -10,7 +10,7 @@ import "./ERC721Tradable.sol";
  */
 contract Creature is ERC721Tradable {
     constructor(address _proxyRegistryAddress)
-        ERC721Tradable("Creature", "OSC", _proxyRegistryAddress)
+        ERC721Tradable("Dagarn's Creature", "D-OSC", _proxyRegistryAddress)
     {}
 
     function baseTokenURI() override public pure returns (string memory) {

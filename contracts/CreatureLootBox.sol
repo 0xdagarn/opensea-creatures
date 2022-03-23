@@ -17,7 +17,7 @@ contract CreatureLootBox is ERC721Tradable {
     address factoryAddress;
 
     constructor(address _proxyRegistryAddress, address _factoryAddress)
-        ERC721Tradable("CreatureLootBox", "LOOTBOX", _proxyRegistryAddress)
+        ERC721Tradable("Dagarn's CreatureLootBox", "D-LOOTBOX", _proxyRegistryAddress)
     {
         factoryAddress = _factoryAddress;
     }
