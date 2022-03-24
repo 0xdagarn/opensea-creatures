@@ -59,11 +59,11 @@ contract CreatureAccessoryFactory is FactoryERC1155, Ownable, ReentrancyGuard {
     /////
 
     function name() override external pure returns (string memory) {
-        return "OpenSea Creature Accessory Pre-Sale";
+        return "Dagarn OpenSea Creature Accessory Pre-Sale";
     }
 
     function symbol() override external pure returns (string memory) {
-        return "OSCAP";
+        return "D-OSCAP";
     }
 
     function supportsFactoryInterface() override external pure returns (bool) {

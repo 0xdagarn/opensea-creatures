@@ -11,8 +11,8 @@ import "./ERC1155Tradable.sol";
 contract CreatureAccessory is ERC1155Tradable {
     constructor(address _proxyRegistryAddress)
         ERC1155Tradable(
-            "OpenSea Creature Accessory",
-            "OSCA",
+            "Dagarn OpenSea Creature Accessory",
+            "D-OSCA",
             "https://creatures-api.opensea.io/api/accessory/{id}",
             _proxyRegistryAddress
         ) {}
