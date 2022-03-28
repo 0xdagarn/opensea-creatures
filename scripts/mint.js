@@ -1,7 +1,8 @@
 require("dotenv").config();
-const HDWalletProvider = require("truffle-hdwallet-provider");
+const PrivateKeyProvider = require("truffle-privatekey-provider");
 const web3 = require("web3");
-const MNEMONIC = process.env.MNEMONIC;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
+
 const NODE_API_KEY = process.env.INFURA_KEY || process.env.ALCHEMY_KEY;
 const isInfura = !!process.env.INFURA_KEY;
 const FACTORY_CONTRACT_ADDRESS = process.env.FACTORY_CONTRACT_ADDRESS;
@@ -13,7 +14,7 @@ const NUM_LOOTBOXES = 4;
 const DEFAULT_OPTION_ID = 0;
 const LOOTBOX_OPTION_ID = 2;
 
-if (!MNEMONIC || !NODE_API_KEY || !OWNER_ADDRESS || !NETWORK) {
+if (!PRIVATE_KEY || !NODE_API_KEY || !OWNER_ADDRESS || !NETWORK) {
   console.error(
     "Please set a mnemonic, Alchemy/Infura key, owner, network, and contract address."
   );
@@ -61,8 +62,8 @@ const FACTORY_ABI = [
 async function main() {
   const network =
     NETWORK === "mainnet" || NETWORK === "live" ? "mainnet" : "rinkeby";
-  const provider = new HDWalletProvider(
-    MNEMONIC,
+  const provider = new PrivateKeyProvider(
+    PRIVATE_KEY,
     isInfura
       ? "https://" + network + ".infura.io/v3/" + NODE_API_KEY
       : "https://eth-" + network + ".alchemyapi.io/v2/" + NODE_API_KEY
