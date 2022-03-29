@@ -39,6 +39,7 @@ module.exports = {
       },
       gas: 5000000,
       network_id: 4,
+      skipDryRun: true,
     },
     live: {
       network_id: 1,
