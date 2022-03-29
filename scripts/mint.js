@@ -1,5 +1,5 @@
 require("dotenv").config();
-const PrivateKeyProvider = require("truffle-privatekey-provider");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 const web3 = require("web3");
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
@@ -62,7 +62,7 @@ const FACTORY_ABI = [
 async function main() {
   const network =
     NETWORK === "mainnet" || NETWORK === "live" ? "mainnet" : "rinkeby";
-  const provider = new PrivateKeyProvider(
+  const provider = new HDWalletProvider(
     PRIVATE_KEY,
     isInfura
       ? "https://" + network + ".infura.io/v3/" + NODE_API_KEY

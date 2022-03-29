@@ -1,6 +1,5 @@
 require("dotenv").config();
-const HDWalletProvider = require("truffle-hdwallet-provider");
-const PrivateKeyProvider = require("truffle-privatekey-provider");
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 const MNEMONIC = process.env.MNEMONIC;
@@ -36,7 +35,7 @@ module.exports = {
     },
     rinkeby: {
       provider: function () {
-        return new PrivateKeyProvider(PRIVATE_KEY, rinkebyNodeUrl);
+        return new HDWalletProvider(PRIVATE_KEY, rinkebyNodeUrl);
       },
       gas: 5000000,
       network_id: 4,
